@@ -1,10 +1,20 @@
 import React from 'react'
 
-import { ExampleComponent } from 'react-horizontal-strip-datepicker'
+import ReactHorizontalDatePicker from 'react-horizontal-strip-datepicker'
 import 'react-horizontal-strip-datepicker/dist/index.css'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  const onSelectedDay = (d) => {
+    console.log(d)
+  }
+
+  return (
+    <ReactHorizontalDatePicker
+      selectedDay={onSelectedDay}
+      enableScroll={true}
+      enableDays={180}
+    />
+  )
 }
 
 export default App

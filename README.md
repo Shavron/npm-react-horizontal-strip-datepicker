@@ -1,30 +1,50 @@
-# react-horizontal-strip-datepicker
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-> react horizontal strip datepicker
+## Available Scripts
 
-[![NPM](https://img.shields.io/npm/v/react-horizontal-strip-datepicker.svg)](https://www.npmjs.com/package/react-horizontal-strip-datepicker) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+In the project directory, you can run:
 
-## Install
+## react-horizontal-strip-datepicker
+A stable horizontal date picker with the option to scroll for web
+![Example](https://i.imgur.com/BaNEgIS.png?1)
 
-```bash
-npm install --save react-horizontal-strip-datepicker
+### Installation
+
+Run `yarn add react-horizontal-strip-datepicker`
+
+### Usage
+
+Import:
+
+`import ReactHorizontalDatePicker from "react-horizontal-strip-datepicker";`
+
+and use as:
+
+```javascript
+<ReactHorizontalDatePicker selectedDay={onSelectedDay} enableScroll={true} enableDays={80}/>
 ```
 
-## Usage
+Available Props are
 
-```jsx
-import React, { Component } from 'react'
+| Prop          | Type    | Default  | Description                                  |
+| ------------- |---------| ---------| -------------------------------------------- |
+| enableScroll  | Boolean | false    | Set List to be scrollable                    |
+| selectedDay   | Function|          | Function to get the selected Day             |
+| enableDays    | Number  |   90     | Number of days to render from current date   |
 
-import MyComponent from 'react-horizontal-strip-datepicker'
-import 'react-horizontal-strip-datepicker/dist/index.css'
+enableDays has no effect if enableScroll is true.
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+Example:
+
+```javascript
+function App() {
+ 
+  const onSelectedDay = (d) =>{
+      console.log(d)
+  };
+
+  return (
+    <ReactHorizontalDatePicker selectedDay={onSelectedDay} enableScroll={true} enableDays={90}/> 
+  );
 }
 ```
-
-## License
-
-MIT © [Shavron](https://github.com/Shavron)
